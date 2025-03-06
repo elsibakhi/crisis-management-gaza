@@ -1,0 +1,144 @@
+        /* تنسيق الصور المصغرة بأبعاد ثابتة */
+       
+       html{
+        width: 100%;
+       }
+       body{
+        width: 100%;
+       }
+       
+       .gallery {
+        display: grid;
+        gap: 10px; /* مسافة بين الصور */
+        width: 100%;
+        max-width: 500px; /* تحديد عرض الشبكة الكلي */
+        margin: auto;
+    }
+    
+    /* جميع الصور داخل الشبكة */
+    .gallery img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover; /* تأكد من أن الصورة مناسبة للإطار */
+        border-radius: 5px; /* حواف مستديرة */
+        cursor: pointer;
+        transition: transform 0.3s ease; /* تأثير تكبير عند المرور بالماوس */
+    }
+    
+    .gallery img:hover {
+        transform: scale(1.1); /* تكبير بسيط عند التمرير */
+    }
+    
+    /* صورة واحدة */
+    .gallery.single img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    /* صورتان */
+    .gallery.double {
+        grid-template-columns: repeat(2, 1fr); /* صف يحتوي على صورتين */
+    }
+    
+    .gallery.double img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    /* ثلاث صور */
+    .gallery.triple {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "large large"
+            "small1 small2";
+    }
+    
+    .gallery.triple img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    /* أربع صور أو أكثر */
+    .gallery.multiple {
+        grid-template-columns: repeat(2, 1fr); /* شبكة 2x2 */
+        grid-template-rows: repeat(2, 1fr);
+    }
+    
+    .gallery.multiple img {
+        width: 120px;
+        height: 120px;
+    }
+
+    
+    .no-images {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f9f9f9;
+ 
+        border-radius: 5px;
+        padding-block-start: 10px;
+        padding-block-end: 10px;
+        padding-inline-start: 20px;
+        padding-inline-end: 20px;
+        width: fit-content;
+        margin: auto;
+        font-family: Arial, sans-serif;
+        color: #666;
+        font-size: 14px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .no-images:hover {
+        background-color: #f0f0f0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* النص */
+    .no-images p {
+        margin: 0;
+        font-weight: bold;
+        color: #444;
+    }
+    
+    
+
+        /* تنسيق نافذة العرض الكبيرة */
+        .imageModal {
+            display: none;
+            position: fixed;
+            z-index:200;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* تنسيق الصورة المكبرة داخل النافذة */
+        .modal-content {
+            max-inline-size: 80%;
+            max-block-size: 80%;
+        }
+
+        /* زر الإغلاق */
+        .close {
+            position: absolute;
+            top: 20px;
+            left: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #modalImage{
+            width: fit-content;
+            height: fit-content;
+        }
