@@ -43,6 +43,22 @@ php artisan migrate --seed
 php artisan serve
 ```
 
+## **Compiles frontend assets**
+
+
+```bash
+npm run dev
+## OR
+npm run build
+```
+
+## **Processes queued jobs in the background**
+
+
+```bash
+php artisan queue:work
+```
+
 ## **Contributing**  
 
 We welcome contributions! If you’d like to improve the project, feel free to open a **pull request** or submit an **issue**.
