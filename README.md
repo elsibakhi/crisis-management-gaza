@@ -14,7 +14,7 @@ The **Crisis Management Platform** is a web-based system designed to assist **Ga
 
 ### **Key Features:**  
 ✅ **Real-time notifications** using Pusher & Echo.  
-✅ **Live chat** to facilitate communication between affected citizens and aid providers.  
+✅ **Live chat** to facilitate communication between admins and institutions.  
 ✅ **Advanced search** with Scout & Algolia for quick access to resources.  
 ✅ **Role-based access control** using Spatie for secure user management.  
 ✅ **Location-based services** with Leaflet for mapping shelters and aid centers.  
