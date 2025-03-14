@@ -1,8 +1,5 @@
 # **Crisis Management Platform**  
 
-<p align="center">
-  <img src="https://drive.google.com/file/d/17hXNYMazto8xSeL5uJbFlUg6GNWIDWzN" width="400" alt="Crisis Management Logo">
-</p>
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Laravel-10-red" alt="Laravel Version"></a>
@@ -37,8 +34,8 @@ The **Crisis Management Platform** is a web-based system designed to assist **Ga
 ## **Installation**  
 
 ```bash
-git clone https://github.com/elsibakhi/crisis-management.git
-cd crisis-management
+git clone https://github.com/elsibakhi/crisis-management-gaza.git
+cd crisis-management-gaza
 composer install
 cp .env.example .env
 php artisan key:generate
