@@ -1,7 +1,7 @@
 # **Crisis Management Platform**  
 
 <p align="center">
-  <img src="https://your-logo-url.com/logo.png" width="400" alt="Crisis Management Logo">
+  <img src="https://drive.google.com/file/d/17hXNYMazto8xSeL5uJbFlUg6GNWIDWzN/view?usp=drivesdk)" width="400" alt="Crisis Management Logo">
 </p>
 
 <p align="center">
