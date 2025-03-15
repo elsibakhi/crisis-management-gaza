@@ -24,8 +24,8 @@ Route::post('institution/enrollment/store',[InstitutionsController::class,"store
 Route::middleware(["auth","verified"])->group(function(){
       // Institution data
 
-      Route::get('institution/data/edit',  [InstitutionsController::class,"editData"])->name("institution.data.edit");
-      Route::put('institution/data',  [InstitutionsController::class,"updateData"])->name("institution.data.update");
+      
+      
 
     //-------------------------  institution middleware
    //service

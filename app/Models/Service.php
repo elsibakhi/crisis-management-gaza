@@ -179,7 +179,7 @@ static::addGlobalScope(new ServiceScope);
       $query->whereRaw(
           "(6371 * acos(cos(radians($lat)) * cos(radians(lat)) * 
           cos(radians(lng) - radians($lng)) + 
-          sin(radians($lat)) * sin(radians(lat)))) < ?", [30] // Example: Filter locations within 10 km
+          sin(radians($lat)) * sin(radians(lat)))) < ?", [10] // Example: Filter locations within 10 km
       );
   })->orderByDesc("created_at");
       

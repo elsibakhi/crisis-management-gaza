@@ -5,6 +5,7 @@ use App\Http\Controllers\ChatController;
 
 use App\Http\Controllers\DashboardController;
 
+use App\Http\Controllers\InstitutionsController;
 use App\Http\Controllers\NotificationController;
 
 use App\Http\Controllers\ProfileController;
@@ -29,7 +30,11 @@ Route::get('/home',DashboardController::class)->middleware(["auth"])->name("home
 // this routes for admin 
 Route::middleware(["auth","verified"])->group(function(){
  
-    //profile
+
+  Route::get('institution/data/edit',  [InstitutionsController::class,"editData"])->name("institution.data.edit");
+  Route::put('institution/data',  [InstitutionsController::class,"updateData"])->name("institution.data.update");
+  
+  //profile
 
     Route::get('user/profile/edit',  [ProfileController::class,"edit"])->name("user.profile.edit");
     Route::put('user/profile',  [ProfileController::class,"update"])->name("user.profile.update");

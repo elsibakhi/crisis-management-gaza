@@ -97,17 +97,21 @@ class NoteController extends Controller
                 return $note->dummyUser->phone;
             })
             ->addColumn('service', function (Note $note) {
-
+                
                 $service = $note->service;
+                if($service){
 
-                return '   <a href="' . route("service.show", [$service->id]) . '" target="_blank"
-                    class="text-dark text-hover-primary font-weight-bold mr-lg-8 mr-5 mb-lg-0 mb-2">
+                    return '   <a href="' . route("service.show", [$service->id]) . '" target="_blank"
+                        class="text-dark text-hover-primary font-weight-bold mr-lg-8 mr-5 mb-lg-0 mb-2">
+            
+                            ' . $service->title . '
+                      
         
-                        ' . $service->title . '
-                  
-    
-    
-                </a>';
+        
+                    </a>';
+                }
+                return "";
+          
             })
             ->addColumn('actions', function ($row) {
                 return  view('admin.notes.actions', compact('row'))->render();

@@ -29,7 +29,7 @@ class UpdateProfileRequest extends FormRequest
             "name" => ["required", "string", "max:200"],
             'email'=>["required", "email", "max:200",Rule::unique('users')->ignore(auth()->id())],
            
-            'phone'=>["nullable", "string",Rule::unique('profiles')->ignore(auth()->id())],
+            'phone'=>["nullable", "string",Rule::unique('profiles')->ignore(auth()->user()->profile->id)],
              'locale'=>["required", "string" , Rule::in([ 'ar','en'])],
              'theme'=>["required", "string" , Rule::in([ 'dark','light'])],
             'profile_avatar'=>["nullable", "file", 'extensions:jpg,png,jpeg', "max:5000"],

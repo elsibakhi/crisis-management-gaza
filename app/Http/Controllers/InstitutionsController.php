@@ -30,7 +30,8 @@ class InstitutionsController extends Controller
     public function index(Request $request)
     {
 
-
+            $user=Auth::user();
+         
         $this->authorize('view institutions');
 
         if ($request->query("type")) {
@@ -74,7 +75,7 @@ class InstitutionsController extends Controller
 
     public function list(Request $request)
     {
-        $this->authorize('view institutions');
+        // $this->authorize('view institutions');
         $institutions = User::where("role", "institution")->with(["profile", "institutionData"]);
         $type = $request->type;
 
@@ -110,7 +111,10 @@ class InstitutionsController extends Controller
     {
         //
 
-        $this->authorize('create institutions');
+        if($request->routeIs("institution.store")){
+
+            $this->authorize('create institutions');
+        }    
 
         DB::transaction(function () use ($request) {
 
@@ -351,6 +355,7 @@ class InstitutionsController extends Controller
     public function updateData(UpdateinstitutionDataRequest $request)
     {
 
+      
         $this->authorize('edit institution data');
         $user = Auth::user();
         DB::transaction(function () use ($request, $user) {

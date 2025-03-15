@@ -183,6 +183,7 @@ class RolesAndPermissionsSeeder extends Seeder
         Role::create(['name' => 'admin of communication'])
             ->givePermissionTo([
                 'communication with institutions',
+                'view institutions',
              
                 ]);
 

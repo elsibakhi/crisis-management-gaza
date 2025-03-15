@@ -536,7 +536,7 @@
 
                                         <!--begin::Text-->
                                         <div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">
-                                            {{ $workingDay->day }}
+                                            {{ __($workingDay->day) }}
                                         </div>
                                         <!--end::Text-->
 
