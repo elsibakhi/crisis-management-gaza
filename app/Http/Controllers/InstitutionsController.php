@@ -30,7 +30,7 @@ class InstitutionsController extends Controller
     public function index(Request $request)
     {
 
-            $user=Auth::user();
+           
          
         $this->authorize('view institutions');
 
@@ -75,7 +75,7 @@ class InstitutionsController extends Controller
 
     public function list(Request $request)
     {
-        // $this->authorize('view institutions');
+        $this->authorize('view institutions');
         $institutions = User::where("role", "institution")->with(["profile", "institutionData"]);
         $type = $request->type;
 
